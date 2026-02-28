@@ -31,7 +31,7 @@ const STEPS = [
 
 export const HowItWorks: React.FC = () => {
   return (
-    <section id="how-it-works" className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #000 0%, #070706 100%)' }}>
+    <section id="how-it-works" className="py-32 relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ background: 'linear-gradient(180deg, #000 0%, #070706 100%)' }}>
       {/* Ambient */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-gold-500/4 rounded-full blur-[120px]" />
@@ -131,21 +131,7 @@ export const HowItWorks: React.FC = () => {
           transition={{ delay: 0.5 }}
           className="flex justify-center mt-16"
         >
-          <div className="group flex items-center gap-4 px-6 py-3.5 rounded-full border border-gold-500/20 bg-gradient-to-r from-neutral-900/80 to-black/80 backdrop-blur-md hover:border-gold-500/40 transition-colors duration-500 shadow-[0_0_20px_rgba(212,165,44,0.05)] cursor-default">
 
-            {/* Animated Status Dot */}
-            <div className="relative flex items-center justify-center w-3 h-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-60"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </div>
-
-            <p className="text-sm font-medium">
-              <span className="text-white">Zero Setup Required.</span>
-              <span className="text-neutral-400 tracking-wide ml-2">Works alongside any curriculum instantly.</span>
-            </p>
-
-            <Sparkles size={14} className="text-gold-500/50 group-hover:text-gold-400 transition-colors duration-300 ml-1" />
-          </div>
         </motion.div>
       </div>
     </section>

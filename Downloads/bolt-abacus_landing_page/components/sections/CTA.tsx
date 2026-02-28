@@ -5,7 +5,7 @@ import { Zap, ArrowRight } from 'lucide-react';
 
 export const CTA: React.FC = () => {
   return (
-    <section id="contact" className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #000 0%, #0a0700 50%, #000 100%)' }}>
+    <section id="contact" className="py-32 relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ background: 'linear-gradient(180deg, #000 0%, #0a0700 50%, #000 100%)' }}>
       {/* Multi-layer glows */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gold-500/8 rounded-full blur-[130px]" />
@@ -46,34 +46,35 @@ export const CTA: React.FC = () => {
           transition={{ delay: 0.15 }}
           className="text-neutral-400 text-xl mb-14 max-w-xl mx-auto leading-relaxed"
         >
-          No commitment. No cards. Just see if it fits — your students will tell you within a week.
+          Access your dedicated dashboard. Track progress, manage assignments, or practice your drills today.
         </motion.p>
 
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10"
+          className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-10"
         >
-          <a href="mailto:demo@boltabacus.com">
+          <a href="https://teacher.boltabacus.com/teacher/auth" target="_blank" rel="noopener noreferrer">
             <motion.div
               whileHover={{ scale: 1.03, boxShadow: '0 0 40px rgba(245,158,11,0.35)' }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.15 }}
-              className="flex items-center gap-2 px-8 py-4 rounded-full bg-gold-500 text-black font-bold text-base cursor-pointer"
+              className="flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 text-black font-bold text-base cursor-pointer shadow-xl shadow-gold-500/20"
             >
-              Book a Free Demo
+              Teacher Portal Login
               <ArrowRight size={16} />
             </motion.div>
           </a>
-          <a href="#students">
+          <a href="https://student.boltabacus.com/student/auth" target="_blank" rel="noopener noreferrer">
             <motion.div
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.05)' }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.15 }}
-              className="flex items-center gap-2 px-8 py-4 rounded-full border border-white/10 text-neutral-300 font-medium text-base cursor-pointer hover:border-gold-500/30 hover:text-gold-400 transition-colors"
+              className="flex items-center gap-2 px-8 py-4 rounded-full border-2 border-white/20 text-neutral-200 font-bold text-base cursor-pointer hover:border-white/40 transition-colors backdrop-blur-sm"
             >
-              See Curriculum
+              Student Dashboard Login
+              <Zap size={16} className="text-blue-400 fill-blue-400" />
             </motion.div>
           </a>
         </motion.div>

@@ -8,6 +8,7 @@ import { HowItWorks } from './components/sections/HowItWorks';
 import { Competitions } from './components/sections/Competitions';
 import { Credibility } from './components/sections/Credibility';
 import { CTA } from './components/sections/CTA';
+import { CurvedMarqueeCTA } from './components/sections/CurvedMarqueeCTA';
 import { Footer } from './components/sections/Footer';
 
 const App: React.FC = () => {
@@ -23,8 +24,9 @@ const App: React.FC = () => {
         <div className="snap-start snap-always w-full"><Competitions /></div>
         <div className="snap-start snap-always w-full"><Credibility /></div>
         <div className="snap-start snap-always w-full"><CTA /></div>
+        <div className="snap-start snap-always w-full"><CurvedMarqueeCTA /></div>
       </main>
-      <Footer />
+      <div className="snap-end snap-always w-full"><Footer /></div>
     </div>
   );
 };

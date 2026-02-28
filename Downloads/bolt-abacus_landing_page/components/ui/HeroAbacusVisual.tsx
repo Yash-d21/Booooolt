@@ -37,7 +37,7 @@ const BeadRod: React.FC<{ value: number; rodIdx: number }> = ({ value, rodIdx })
     const lowerActiveCount = value % 5;
 
     // To prevent sudden jumps, use spring transitions
-    const transition = { type: 'spring', stiffness: 350, damping: 25 };
+    const transition = { type: 'spring', stiffness: 350, damping: 25 } as const;
 
     return (
         <div style={{ position: 'relative', width: BEAD_W, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -194,7 +194,7 @@ export const HeroAbacusVisual: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: 'easeOut' }}
                 style={{
-                    width: '100%', maxWidth: 460,
+                    width: '100%', maxWidth: 400,
                     padding: 1.5,
                     borderRadius: 24,
                     background: 'linear-gradient(145deg, rgba(245,158,11,0.65) 0%, rgba(20,14,4,0.0) 55%, rgba(244,63,94,0.4) 100%)',

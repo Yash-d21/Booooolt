@@ -11,7 +11,7 @@ const records = [
 
 export const Credibility: React.FC = () => {
   return (
-    <section className="py-32 bg-black relative overflow-hidden border-t border-white/5">
+    <section className="py-32 bg-black relative overflow-hidden border-t border-white/5 min-h-screen flex flex-col justify-center">
       {/* Ambience */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute bottom-0 left-1/4 w-[600px] h-[400px] bg-indigo-600/4 rounded-full blur-[100px]" />

@@ -23,7 +23,7 @@ export const Features: React.FC = () => {
       ═══════════════════════════════════════════════ */}
       <section
         id="students"
-        className="py-32 relative overflow-hidden"
+        className="py-32 relative overflow-hidden min-h-screen flex flex-col justify-center"
         style={{ background: 'linear-gradient(160deg, #060810 0%, #090e18 100%)' }}
       >
         {/* Ambient radial glows — subtle, neutral/cool tones */}
@@ -83,7 +83,6 @@ export const Features: React.FC = () => {
             className="text-center text-sm mb-16"
             style={{ color: 'rgba(129,140,248,0.6)' }}
           >
-            ✦ Tap any card to flip it
           </motion.p>
 
           <div className="mb-24">
@@ -96,16 +95,6 @@ export const Features: React.FC = () => {
             transition={{ delay: 0.5 }}
             className="flex justify-center"
           >
-            <div
-              className="flex items-center gap-3 rounded-full px-6 py-2.5 backdrop-blur-sm"
-              style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.03)' }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-              <p className="text-neutral-400 text-sm">
-                Students access Bolt Abacus via a subscription.{' '}
-                <span className="text-indigo-400 font-medium">Exact pricing on request.</span>
-              </p>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -113,14 +102,14 @@ export const Features: React.FC = () => {
       {/* ═══════════════════════════════════════════════
           SECTION 5 — FOR TEACHERS
       ═══════════════════════════════════════════════ */}
-      <section id="teachers" className="py-32 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #0a0000 0%, #000000 100%)' }}>
+      <section id="teachers" className="py-32 relative overflow-hidden min-h-screen flex flex-col justify-center" style={{ background: 'linear-gradient(180deg, #0a0000 0%, #000000 100%)' }}>
         {/* Diagonal gold beam */}
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-[700px] h-[700px] bg-gold-500/6 rounded-full blur-[140px]" />
           <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold-900/10 rounded-full blur-[80px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-[1400px] mx-auto px-4 md:px-8 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
             className="flex justify-center mb-5"
@@ -147,7 +136,7 @@ export const Features: React.FC = () => {
             Teachers never pay. And you never lose control of your classroom.
           </motion.p>
 
-          <div className="max-w-5xl mx-auto mb-20 relative z-20" style={{ height: '600px' }}>
+          <div className="w-full mx-auto mb-20 relative z-20" style={{ height: '600px' }}>
             <FeatureCarousel
               title=""
               description=""

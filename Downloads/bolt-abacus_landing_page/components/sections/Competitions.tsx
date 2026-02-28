@@ -75,7 +75,7 @@ const LiveLeaderboard = () => {
     <div className="w-full h-full flex flex-col pt-2">
       {/* Live Timer Bar */}
       <div className="flex justify-between items-end mb-4 px-2 border-b border-white/5 pb-2">
-        <div className="text-[10px] text-neutral-500 font-bold uppercase tracking-widest">Heat 4 / Div A</div>
+        <div className="text-[10px] text-neutral-500 font-bold uppercase tracking-widest">Level 4 / Class 3</div>
         <div className="text-xl font-mono font-bold text-gold-400 tabular-nums tracking-tight">
           {formatTimer(timer)}
         </div>
@@ -137,7 +137,7 @@ export const Competitions: React.FC = () => {
   return (
     <section
       id="competitions"
-      className="py-32 relative overflow-hidden border-t border-white/5"
+      className="py-32 relative overflow-hidden border-t border-white/5 min-h-screen flex flex-col justify-center"
       style={{ background: 'linear-gradient(180deg, #050505 0%, #000000 100%)' }}
     >
       {/* Background ambience */}
@@ -226,7 +226,7 @@ export const Competitions: React.FC = () => {
                   className="text-[200px] font-black italic select-none leading-none"
                   style={{ color: 'rgba(245,158,11,0.04)', fontFamily: 'serif' }}
                 >
-                  VS
+
                 </span>
               </div>
 

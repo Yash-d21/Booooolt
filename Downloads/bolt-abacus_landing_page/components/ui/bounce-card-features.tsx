@@ -62,7 +62,7 @@ export const BouncyCardsFeatures = () => {
                         <CardTitle>Endless correcting</CardTitle>
                     </div>
                     <div className="absolute bottom-0 left-4 right-4 top-32 translate-y-8 rounded-t-2xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 p-4 transition-transform duration-[250ms] group-hover:translate-y-4 group-hover:rotate-[1deg] border border-white/10 overflow-hidden backdrop-blur-sm">
-                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66cb85?auto=format&fit=crop&q=80&w=800" alt="Correcting papers" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" />
+                        <img src="https://unsplash.com/photos/black-retractable-pen-on-white-printer-paper-_zsL306fDck" alt="Correcting papers" className="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay" />
                         <span className="relative block text-center font-semibold text-indigo-200">
                             Teachers waste hours grading manual sheets.
                         </span>

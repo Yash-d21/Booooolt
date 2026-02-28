@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
   return (
-    <section id="home" className="relative min-h-[85vh] flex items-center pt-24 pb-12 overflow-hidden bg-black">
+    <section id="home" className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden bg-black">
       {/* Dynamic Background */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,165,44,0.15),transparent_40%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(212,165,44,0.05),transparent_40%)]" />
@@ -19,15 +19,15 @@ export const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.1] text-white tracking-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-bold leading-[1.1] text-white tracking-tight mb-6">
               Modern Practice <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-500 to-gold-300">
                 Revolution.
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-neutral-400 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
-              A premium dashboard for teachers. <br className="hidden md:block" />
-              An addictive game for students.
+            <p className="text-lg md:text-xl text-neutral-400 font-light leading-relaxed max-w-xl mx-auto lg:mx-0">
+              Built for teachers.  <br className="hidden md:block" />
+              Engineered for students.
             </p>
           </motion.div>
 
@@ -57,11 +57,11 @@ export const Hero: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start pt-4"
           >
-            <a href="#contact">
-              <InteractiveHoverButton text="Book Free Demo" className="w-48 bg-gold-500 text-black border-gold-500 hover:bg-gold-400" />
+            <a href="https://teacher.boltabacus.com/teacher/auth">
+              <InteractiveHoverButton text="Login as Teacher" className="w-48 bg-gold-500 text-black border-gold-500 hover:bg-gold-400 font-bold" />
             </a>
-            <a href="#students">
-              <InteractiveHoverButton text="See Student View" className="w-48 border-white/20 hover:border-gold-500/50" />
+            <a href="https://student.boltabacus.com/student/auth">
+              <InteractiveHoverButton text="Login as Student" className="w-48 border-white/20 hover:border-gold-500/50 font-bold" />
             </a>
           </motion.div>
         </div>

@@ -295,7 +295,7 @@ function FeatureCard({
         >
             <div
                 className={clsx(
-                    "group relative w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-neutral-900/90 to-black transition duration-300 hover:border-gold-500/20",
+                    "group relative w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-neutral-900 to-black transition duration-300 hover:border-gold-500/20",
                     bgClass
                 )}
             >
@@ -345,9 +345,9 @@ function Steps({
     onChange: (index: number) => void
 }) {
     return (
-        <nav aria-label="Progress" className="flex justify-center px-4 w-full">
+        <nav aria-label="Progress" className="flex justify-start w-full">
             <ol
-                className="flex w-full flex-wrap items-center justify-center gap-2 md:gap-4 lg:w-[90%]"
+                className="flex w-full flex-row lg:flex-col flex-wrap items-center lg:items-start justify-center gap-2 md:gap-4"
                 role="list"
             >
                 {stepData.map((step, stepIdx) => {
@@ -363,9 +363,9 @@ function Steps({
                             variants={stepVariants}
                             transition={{ duration: 0.3 }}
                             className={cn(
-                                "relative z-50 rounded-full px-4 py-2 transition-all duration-300 ease-in-out md:flex",
-                                isCurrent ? "bg-white/10 border border-white/20" : "bg-neutral-900 border border-neutral-800",
-                                "cursor-pointer hover:bg-neutral-800"
+                                "relative z-50 py-2 transition-all duration-300 ease-in-out md:flex lg:w-full",
+                                isCurrent ? "opacity-100" : "opacity-40",
+                                "cursor-pointer hover:opacity-100"
                             )}
                             onClick={() => onChange(stepIdx)}
                         >
@@ -437,56 +437,46 @@ export const FeatureCarousel = ({
         setIsAnimating(false)
     }
 
-    const renderStepContent = () => {
-        const content = () => {
-            switch (step) {
-                case 0:
-                    return (
-                        <motion.div className="relative w-full h-full" onAnimationComplete={handleAnimationComplete}>
-                            <AnimatedStepImage alt={image.alt} className={clsx(step1img1Class)} src={image.step1light1} preset="slideInLeft" />
-                            <AnimatedStepImage alt={image.alt} className={clsx(step1img2Class)} src={image.step1light2} preset="slideInRight" delay={0.1} />
-                        </motion.div>
-                    )
-                case 1:
-                    return (
-                        <motion.div className="relative w-full h-full" onAnimationComplete={handleAnimationComplete}>
-                            <AnimatedStepImage alt={image.alt} className={clsx(step2img1Class)} src={image.step2light1} preset="fadeInScale" />
-                            <AnimatedStepImage alt={image.alt} className={clsx(step2img2Class)} src={image.step2light2} preset="fadeInScale" delay={0.1} />
-                        </motion.div>
-                    )
-                case 2:
-                    return (
-                        <motion.div className="relative w-full h-full" onAnimationComplete={handleAnimationComplete}>
-                            <AnimatedStepImage alt={image.alt} className={clsx(step3imgClass)} src={image.step3light} preset="slideInRight" />
-                        </motion.div>
-                    )
-                case 3:
-                    return (
-                        <motion.div className="relative w-full h-full" onAnimationComplete={handleAnimationComplete}>
-                            <AnimatedStepImage alt={image.alt} className={clsx(step4imgClass)} src={image.step4light} preset="slideInLeft" />
-                        </motion.div>
-                    )
-                default:
-                    return null
-            }
+    const renderStepContent = (stepIndex: number) => {
+        switch (stepIndex) {
+            case 0:
+                return (
+                    <div className="absolute inset-0 w-full h-full">
+                        <StepImage alt={image.alt} className={clsx(step1img1Class)} src={image.step1light1} />
+                        <StepImage alt={image.alt} className={clsx(step1img2Class)} src={image.step1light2} />
+                    </div>
+                )
+            case 1:
+                return (
+                    <div className="absolute inset-0 w-full h-full">
+                        <StepImage alt={image.alt} className={clsx(step2img1Class)} src={image.step2light1} />
+                        <StepImage alt={image.alt} className={clsx(step2img2Class)} src={image.step2light2} />
+                    </div>
+                )
+            case 2:
+                return (
+                    <div className="absolute inset-0 w-full h-full">
+                        <StepImage alt={image.alt} className={clsx(step3imgClass)} src={image.step3light} />
+                    </div>
+                )
+            case 3:
+                return (
+                    <div className="absolute inset-0 w-full h-full">
+                        <StepImage alt={image.alt} className={clsx(step4imgClass)} src={image.step4light} />
+                    </div>
+                )
+            default:
+                return null
         }
-
-        return (
-            <AnimatePresence mode="wait">
-                <motion.div key={step} {...ANIMATION_PRESETS.fadeInScale} className="w-full h-full absolute">
-                    {content()}
-                </motion.div>
-            </AnimatePresence>
-        )
     }
 
     return (
-        <div className="w-full h-full flex flex-col items-center">
+        <div className="w-full h-full flex flex-col lg:flex-row items-center lg:items-start justify-center gap-8 lg:gap-0">
             <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="w-full mb-8 z-50"
+                className="w-full lg:w-[160px] mb-8 lg:mb-0 lg:mt-24 z-50 flex-shrink-0"
             >
                 <Steps
                     current={step}
@@ -496,10 +486,35 @@ export const FeatureCarousel = ({
                     }}
                 />
             </motion.div>
-            <FeatureCard {...props} step={step}>
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,165,44,0.1),transparent_50%)]" />
-                {renderStepContent()}
-            </FeatureCard>
+            <div className="relative w-full max-w-4xl h-[600px] flex justify-center perspective-[1000px] mt-4 lg:mt-0 flex-shrink-0 lg:-ml-8 lg:mr-0 text-left">
+                {steps.map((_, index) => {
+                    const diff = (index - step + TOTAL_STEPS) % TOTAL_STEPS;
+                    // diff 0 is front, diff 1 is slightly behind right, etc.
+
+                    return (
+                        <motion.div
+                            key={index}
+                            className="absolute top-0 w-[95%] sm:w-[85%] md:w-[85%] lg:w-[95%]"
+                            initial={false}
+                            animate={{
+                                x: diff * (typeof window !== 'undefined' && window.innerWidth < 768 ? 15 : 40),
+                                y: diff * 15,
+                                scale: 1 - diff * 0.05,
+                                opacity: 1 - diff * 0.15,
+                                zIndex: TOTAL_STEPS - diff,
+                            }}
+                            transition={{ duration: 0.6, type: "spring", bounce: 0.3 }}
+                        >
+                            <FeatureCard {...props} step={index}>
+                                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(212,165,44,0.1),transparent_50%)] z-0" />
+                                <div className="absolute inset-0 z-10 pointer-events-none">
+                                    {renderStepContent(index)}
+                                </div>
+                            </FeatureCard>
+                        </motion.div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

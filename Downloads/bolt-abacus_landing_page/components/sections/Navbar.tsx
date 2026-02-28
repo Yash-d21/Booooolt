@@ -126,9 +126,7 @@ export const Navbar: React.FC = () => {
         {/* Right Side Actions */}
         <div className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-4">
-            <Button href="#contact" variant="primary" className="!rounded-full !h-10 !px-5 !text-[11px] !font-black !tracking-[0.1em] shadow-lg flex items-center justify-center">
-              BOOK DEMO
-            </Button>
+
 
             <a
               href="https://www.boltabacus.com/sign"
@@ -190,14 +188,7 @@ export const Navbar: React.FC = () => {
                 </motion.button>
               ))}
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="mt-8"
-              >
-                <Button href="#contact" variant="primary" className="!text-lg !px-12 !py-4 rounded-full">Book Demo</Button>
-              </motion.div>
+
             </div>
           </motion.div>
         )}

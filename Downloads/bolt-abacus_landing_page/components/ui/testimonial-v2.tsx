@@ -14,19 +14,19 @@ const baseTestimonials: Testimonial[] = [
     {
         text: "My students practice 3× more because they want to top the leaderboard. It's not homework anymore — it's a sport.",
         image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=150&h=150",
-        name: "Priya Sharma",
+        name: "Asvaan Zuhair",
         role: "Director, Abacus Institute 1",
     },
     {
         text: "The teacher dashboard is the thing I never knew I needed. I can tell at a glance who is falling behind — before the test.",
         image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150&h=150",
-        name: "Rajesh Kumar",
+        name: "Yashwanth Devulapally",
         role: "Director, Abacus Institute 2",
     },
     {
         text: "Parents stopped asking 'how is my child doing?' because they can see it themselves. That alone saves me hours a month.",
         image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150&h=150",
-        name: "Anjali Desai",
+        name: "Md. Mujahed",
         role: "Director, Abacus Institute 3",
     },
 ];
