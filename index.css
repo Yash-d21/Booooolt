@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Custom scrollbar ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.45);
+}
+
+@layer base {
+  :root {
+    --color-gold-100: #F9F1D8;
+    --color-gold-200: #F0DEAA;
+    --color-gold-300: #E6CB7D;
+    --color-gold-400: #DDB853;
+    --color-gold-500: #cf9f23;
+    --color-gold-600: #AA8423;
+    --color-gold-700: #80631B;
+    --color-gold-800: #554212;
+    --color-gold-900: #2B2109;
+
+    --color-dark-950: #0a0a0a;
+    --color-dark-900: #171717;
+    --color-dark-850: #262626;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y proximity;
+  }
+
+  body {
+    @apply bg-black text-gray-100 antialiased font-sans selection:bg-gold-500/30 selection:text-gold-100 overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px rgba(212, 165, 44, 0.3);
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-100 via-gold-400 to-gold-100;
+  }
+
+  .bg-gradient-gold {
+    @apply bg-gradient-to-br from-gold-400 to-gold-600;
+  }
+
+  .glass-card {
+    @apply bg-dark-900/50 backdrop-blur-md border border-white/5;
+  }
+
+  .glass-card-hover {
+    @apply hover:bg-dark-900/70 hover:border-gold-500/20 transition-all duration-300;
+  }
+
+  /* Abacus Specific Styles */
+  .abacus-rod {
+    @apply h-[2px] w-full bg-gradient-to-r from-transparent via-gold-500/50 to-transparent shadow-[0_1px_2px_rgba(0, 0, 0, 0.5)];
+  }
+
+  .abacus-bead {
+    @apply rounded-full bg-gradient-to-b from-gold-100 via-gold-400 to-gold-600 shadow-[inset_0_-2px_4px_rgba(0, 0, 0, 0.3), 0_4px_8px_rgba(0, 0, 0, 0.4)];
+  }
+
+  .abacus-bead-active {
+    @apply shadow-[0_0_15px_rgba(212, 165, 44, 0.6), inset_0_-2px_4px_rgba(0, 0, 0, 0.3)];
+  }
+}
